@@ -1,0 +1,31 @@
+<h1>Leave Application</h1>
+
+<%= form_for(@leave) do |f| %>
+
+  <div class="field">
+    <%= f.label :date, "date" %><br />
+    <%= f.date_field :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :reason, "reason" %><br />
+    <%= f.text_field :reason %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id, "user_id" %><br />
+    <%= f.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :applicant_name, "Name" %><br />
+    <%= f.text_field :applicant_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "submit" %>
+  </div>
+
+<% end %>
+
+<%= link_to 'Back', leaves_path %>

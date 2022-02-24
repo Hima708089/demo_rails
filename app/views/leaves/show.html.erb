@@ -1,0 +1,17 @@
+<h1>Leave Application List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% = byebug %>
+    <% @leaves.each do |leave| %>
+    <tr>
+      <td><%= leaves.status %></td>
+    </tr>
+    <% end%>
+  </tbody>
+</table>

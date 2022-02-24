@@ -1,0 +1,18 @@
+<h1>Holidays List</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @holiday.each do |holiday| %>
+		<tr>
+			<td> <%= holiday.date %> </td>
+			<td><%= holiday.description %></td>
+		</tr>
+		<% end%>
+	</tbody>
+</table>
