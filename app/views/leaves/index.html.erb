@@ -3,22 +3,25 @@
 <table>
 	<thead>
 		<tr>
-			<th>Date</th>
-			<th>Reason</th>
-			<th>User_id</th>
-			<th>Name</th>
+			<th>Date:</th>
+			<th>Reason:</th>
+			<th>User_id:</th>
+			<th>Name:</th>
+			<th>Status:</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @leaves.each do |leave| %>
 		<tr>
-			<td> <%= leave.date %> </td>
+			<td><%= leave.date %> </td>
 			<td><%= leave.reason %></td>
 			<td><%= leave.user_id %></td>
 			<td><%= leave.applicant_name %></td>
-			<td><%= link_to 'Approve', leafe_path(id: leave.id, status: true), method: :patch %></td>
-			<td><%= link_to 'Reject', leafe_path(id: leave.id, status: false), method: :patch %></td>
+			<td><%= button_to 'Approve', leafe_path(id: leave.id, status: true), method: :patch %></td>
+			<td><%= button_to 'Reject', leafe_path(id: leave.id, status: false), method: :patch %></td>
 		</tr>
 		<% end%>
 	</tbody>
 </table>
+
+

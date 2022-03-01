@@ -1,8 +1,11 @@
 class LeavesController < ApplicationController
+	#byebug
+	authorize_resource :class => false	
 
 	def index
 		@leaves = Leave.all
 	end
+	
 	def new
 		@leave = Leave.new
 	end
@@ -14,7 +17,7 @@ class LeavesController < ApplicationController
 		user_id:params[:leave][:user_id],
 		applicant_name:params[:leave][:applicant_name])
 			if @leave.save
-				redirect_to leaves_path
+				redirect_to root_path
 			else
 				render:new
 			end
@@ -31,11 +34,11 @@ class LeavesController < ApplicationController
   def update
   	@leave = Leave.find(params[:id])
 	  	if @leave.update(
-	  		user_id:params[:leave][:user_id],
-	  		status:params[:leave][:status])
-	  	  redirect_to leaves_path
+	  		status:params[:status])
+	  	  redirect_to leafe_path
 	  	else
 	  		render:edit 
 	  	end
   end
 end
+

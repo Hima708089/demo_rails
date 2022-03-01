@@ -50,7 +50,7 @@ gem "bootsnap", require: false
 
 # user registration and login
 gem 'devise'
-
+gem 'cancancan'
 gem 'byebug'
 
 group :development, :test do

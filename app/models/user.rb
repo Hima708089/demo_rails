@@ -5,4 +5,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :first_name,:last_name, presence: true
+
+  def is_subordinate?
+    type == 'Subordinate'
+  end
+
+  def is_manager?
+    type == 'Manager'
+  end
+  
 end
